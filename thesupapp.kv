@@ -1,0 +1,505 @@
+WindowManager:
+    MenuWindow: 
+    ElectronicsWindow: 
+    TextileWindow: 
+    GroceriesWindow: 
+    StationaryWindow: 
+    ConfirmWindow: 
+
+<MenuWindow>:
+    name : "menu"
+    BoxLayout: 
+        orientation : "vertical"       
+        Label:                  
+            text: "Welcome to the Adimart!\nMake your choice :"
+            size_hint : 1,0.4
+            font_size : "50dp"
+        BoxLayout: 
+            orientation: "horizontal"
+            spacing : "10dp"
+            BoxLayout: 
+                orientation: "vertical"
+                spacing : "10dp"     
+                Button:                        
+                    text: "Electronics"
+                    on_release:
+                        app.root.current = "electronics"
+                        root.manager.transition.direction = "left"
+                Button:                        
+                    text: "Textile"
+                    on_release:
+                        app.root.current = "textile"
+                        root.manager.transition.direction = "left"
+            BoxLayout: 
+                orientation: "vertical"
+                spacing : "10dp" 
+                Button:                        
+                    text: "Groceries"
+                    on_release:
+                        app.root.current = "groceries"
+                        root.manager.transition.direction = "left"
+                Button:                        
+                    text: "Stationary"
+                    on_release:
+                        app.root.current = "stationary"
+                        root.manager.transition.direction = "left"
+<ElectronicsWindow>:
+    name : "electronics"
+    GridLayout:  
+        cols : 2             
+        BoxLayout: 
+            orientation: "vertical"
+            spacing: "10dp"   
+            BoxLayout: 
+                Label:                        
+                    text: "Laptop"
+                Button: 
+                    text: "+"
+                    on_press : root.on_lbutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minusl()
+            BoxLayout: 
+                Label:                        
+                    text: "Mobile"
+                Button: 
+                    text: "+"
+                    on_press : root.on_mbutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minusm()
+            BoxLayout: 
+                Label:                        
+                    text: "Washing Machine"
+                Button: 
+                    text: "+"
+                    on_press : root.on_wbutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minusw()
+            BoxLayout: 
+                Label:                        
+                    text: "Fridge"
+                Button: 
+                    text: "+"
+                    on_press : root.on_fbutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minusf()
+            BoxLayout: 
+                Label:                        
+                    text: "Air Conditioner"
+                Button: 
+                    text: "+"
+                    on_press : root.on_abutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minusa()
+            BoxLayout: 
+                Label:                        
+                    text: "Television"
+                Button: 
+                    text: "+"
+                    on_press : root.on_tbutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minust()
+            BoxLayout: 
+                Label:                        
+                    text: "Microwave/Oven"
+                Button: 
+                    text: "+"
+                    on_press : root.on_obutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minuso()
+        BoxLayout: 
+            orientation: "vertical"
+            Label: 
+                text : "Laptop X " + root.my_textl + " = " +  str(root.lnum*50000)
+                size_hint : 1,0.2
+            Label: 
+                text : "Mobile X " + root.my_textm+ " = " +  str(root.mnum*20000)
+                size_hint : 1,0.2
+            Label: 
+                text : "Washing Machine X " + root.my_textw+ " = " +  str(root.wnum*45000)
+                size_hint : 1,0.2
+            Label: 
+                text : "Fridge X " + root.my_textf+ " = " +  str(root.fnum*40000)
+                size_hint : 1,0.2
+            Label: 
+                text : "Air Conditioner X " + root.my_texta+ " = " +  str(root.anum*25000)
+                size_hint : 1,0.2
+            Label: 
+                text : "Television X " + root.my_textt+ " = " +  str(root.tnum*50000)
+                size_hint : 1,0.2
+            Label: 
+                text : "Microwave X " + root.my_texto+ " = " +  str(root.onum*25000)
+                size_hint : 1,0.2
+            Label: 
+                text : "Total Bill  displayed finally"
+                size_hint : 1,0.2
+            BoxLayout: 
+                orientation : "horizontal"
+                Button: 
+                    text: "Confirm"
+                    size_hint : 0.5,0.25
+                    color : 0,1,0
+                    on_release: 
+                        app.root.current = "confirm"
+                        root.manager.transition.direction = "left"
+                Button: 
+                    text: "Back"
+                    color : 1,0,0
+                    size_hint : 0.5,0.25
+                    on_release : 
+                        app.root.current = "menu"
+                        root.manager.transition.direction = "right"
+<TextileWindow>:
+    name : "textile"
+    GridLayout:  
+        cols : 2             
+        BoxLayout: 
+            orientation: "vertical"
+            spacing: "10dp"   
+            BoxLayout: 
+                Label:                        
+                    text: "Shirts"
+                Button: 
+                    text: "+"
+                    on_press : root.on_lbutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minusl()
+            BoxLayout: 
+                Label:                        
+                    text: "Pants"
+                Button: 
+                    text: "+"
+                    on_press : root.on_mbutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minusm()
+            BoxLayout: 
+                Label:                        
+                    text: "Inner wears"
+                Button: 
+                    text: "+"
+                    on_press : root.on_wbutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minusw()
+            BoxLayout: 
+                Label:                        
+                    text: "Jackets/Sweaters"
+                Button: 
+                    text: "+"
+                    on_press : root.on_fbutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minusf()
+            BoxLayout: 
+                Label:                        
+                    text: "kurtas/Pyjamas"
+                Button: 
+                    text: "+"
+                    on_press : root.on_abutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minusa()
+            BoxLayout: 
+                Label:                        
+                    text: "Sarees"
+                Button: 
+                    text: "+"
+                    on_press : root.on_tbutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minust()
+            BoxLayout: 
+                Label:                        
+                    text: "Socks/Gloves"
+                Button: 
+                    text: "+"
+                    on_press : root.on_obutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minuso()
+        BoxLayout: 
+            orientation: "vertical"
+            Label: 
+                text : "Shirts X " + root.my_textl + " = " +  str(root.lnum*500)
+                size_hint : 1,0.2
+            Label: 
+                text : "Pants X " + root.my_textm+ " = " +  str(root.mnum*2500)
+                size_hint : 1,0.2
+            Label: 
+                text : "Inner Wear X " + root.my_textw+ " = " +  str(root.wnum*500)
+                size_hint : 1,0.2
+            Label: 
+                text : "Jackets/Sweaters X " + root.my_textf+ " = " +  str(root.fnum*2000)
+                size_hint : 1,0.2
+            Label: 
+                text : "kurtas/Pyjamas X " + root.my_texta+ " = " +  str(root.anum*2500)
+                size_hint : 1,0.2
+            Label: 
+                text : "Sarees X " + root.my_textt+ " = " +  str(root.tnum*2000)
+                size_hint : 1,0.2
+            Label: 
+                text : "Socks/Gloves X " + root.my_texto+ " = " +  str(root.onum*500)
+                size_hint : 1,0.2
+            Label: 
+                text : "Total Bill displayed finally after all purchases"
+                size_hint : 1,0.2
+            BoxLayout: 
+                orientation : "horizontal"
+                Button: 
+                    text: "Confirm"
+                    size_hint : 0.5,0.25
+                    color : 0,1,0
+                    on_release: 
+                        app.root.current = "confirm"
+                        root.manager.transition.direction = "left"
+                Button: 
+                    text: "Back"
+                    color : 1,0,0
+                    size_hint : 0.5,0.25
+                    on_release : 
+                        app.root.current = "menu"
+                        root.manager.transition.direction = "right"
+<GroceriesWindow>:
+    name : "groceries"
+    GridLayout:  
+        cols : 2             
+        BoxLayout: 
+            orientation: "vertical"
+            spacing: "10dp"   
+            BoxLayout: 
+                Label:                        
+                    text: "Fruits/Vegetables"
+                Button: 
+                    text: "+"
+                    on_press : root.on_lbutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minusl()
+            BoxLayout: 
+                Label:                        
+                    text: "Dairy Products"
+                Button: 
+                    text: "+"
+                    on_press : root.on_mbutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minusm()
+            BoxLayout: 
+                Label:                        
+                    text: "Spices"
+                Button: 
+                    text: "+"
+                    on_press : root.on_wbutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minusw()
+            BoxLayout: 
+                Label:                        
+                    text: "Dry Fruits"
+                Button: 
+                    text: "+"
+                    on_press : root.on_fbutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minusf()
+            BoxLayout: 
+                Label:                        
+                    text: "Masalas"
+                Button: 
+                    text: "+"
+                    on_press : root.on_abutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minusa()
+            BoxLayout: 
+                Label:                        
+                    text: "Flavours"
+                Button: 
+                    text: "+"
+                    on_press : root.on_tbutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minust()
+            BoxLayout: 
+                Label:                        
+                    text: "Oils"
+                Button: 
+                    text: "+"
+                    on_press : root.on_obutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minuso()
+        BoxLayout: 
+            orientation: "vertical"
+            Label: 
+                text : "Vegetables/Fruits X " + root.my_textl + " = " +  str(root.lnum*75)
+                size_hint : 1,0.2
+            Label: 
+                text : "Dairy Products X " + root.my_textm+ " = " +  str(root.mnum*100)
+                size_hint : 1,0.2
+            Label: 
+                text : "Spices X " + root.my_textw+ " = " +  str(root.wnum*250)
+                size_hint : 1,0.2
+            Label: 
+                text : "Dry Fruits X " + root.my_textf+ " = " +  str(root.fnum*750)
+                size_hint : 1,0.2
+            Label: 
+                text : "Masalas X " + root.my_texta+ " = " +  str(root.anum*200)
+                size_hint : 1,0.2
+            Label: 
+                text : "Flavours X " + root.my_textt+ " = " +  str(root.tnum*100)
+                size_hint : 1,0.2
+            Label: 
+                text : "Oils X " + root.my_texto+ " = " +  str(root.onum*150)
+                size_hint : 1,0.2
+            Label: 
+                text : "Total Bill displayed finally after all purchases"
+                size_hint : 1,0.2
+            BoxLayout: 
+                orientation : "horizontal"
+                Button: 
+                    text: "Confirm"
+                    size_hint : 0.5,0.25
+                    color : 0,1,0
+                    on_release: 
+                        app.root.current = "confirm"
+                        root.manager.transition.direction = "left"
+                Button: 
+                    text: "Back"
+                    color : 1,0,0
+                    size_hint : 0.5,0.25
+                    on_release : 
+                        app.root.current = "menu"
+                        root.manager.transition.direction = "right"
+<StationaryWindow>:
+    name : "stationary"
+    GridLayout:  
+        cols : 2             
+        BoxLayout: 
+            orientation: "vertical"
+            spacing: "10dp"   
+            BoxLayout: 
+                Label:                        
+                    text: "Pen\nPencil"
+                Button: 
+                    text: "+"
+                    on_press : root.on_lbutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minusl()
+            BoxLayout: 
+                Label:                        
+                    text: "Crayons\nSketchpens"
+                Button: 
+                    text: "+"
+                    on_press : root.on_mbutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minusm()
+            BoxLayout: 
+                Label:                        
+                    text: "Paints"
+                Button: 
+                    text: "+"
+                    on_press : root.on_wbutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minusw()
+            BoxLayout: 
+                Label:                        
+                    text: "Notebooks"
+                Button: 
+                    text: "+"
+                    on_press : root.on_fbutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minusf()
+            BoxLayout: 
+                Label:                        
+                    text: "Chalks\nDuster\nMarkers"
+                Button: 
+                    text: "+"
+                    on_press : root.on_abutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minusa()
+            BoxLayout: 
+                Label:                        
+                    text: "Rubber\nWhitener\nSharpner"
+                Button: 
+                    text: "+"
+                    on_press : root.on_tbutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minust()
+            BoxLayout: 
+                Label:                        
+                    text: "Tape \nWhite\nTransparent\nBrown"
+                Button: 
+                    text: "+"
+                    on_press : root.on_obutton_click()
+                Button: 
+                    text : "-"
+                    on_press : root.minuso()
+        BoxLayout: 
+            orientation: "vertical"
+            Label: 
+                text : "Pens/Pencils X " + root.my_textl + " = " +  str(root.lnum*10)
+                size_hint : 1,0.2
+            Label: 
+                text : "Crayons/Sketchpens X " + root.my_textm+ " = " +  str(root.mnum*50)
+                size_hint : 1,0.2
+            Label: 
+                text : "Paints X " + root.my_textw+ " = " +  str(root.wnum*150)
+                size_hint : 1,0.2
+            Label: 
+                text : "Notebooks X " + root.my_textf+ " = " +  str(root.fnum*45)
+                size_hint : 1,0.2
+            Label: 
+                text : "Chalks & * X " + root.my_texta+ " = " +  str(root.anum*50)
+                size_hint : 1,0.2
+            Label: 
+                text : "Rubber & * X " + root.my_textt+ " = " +  str(root.tnum*25)
+                size_hint : 1,0.2
+            Label: 
+                text : "Tape:Types * X " + root.my_texto+ " = " +  str(root.onum*50)
+                size_hint : 1,0.2
+            Label: 
+                text : "Total Bill displayed finally\nafter all purchases"
+                size_hint : 1,0.2
+            BoxLayout: 
+                orientation : "horizontal"
+                Button: 
+                    text: "Confirm"
+                    size_hint : 0.5,0.2
+                    color : 0,1,0
+                    on_release: 
+                        app.root.current = "confirm"
+                        root.manager.transition.direction = "left"
+                Button: 
+                    text: "Back"
+                    color : 1,0,0
+                    size_hint : 0.5,0.2
+                    on_release : 
+                        app.root.current = "menu"
+                        root.manager.transition.direction = "right"
+<ConfirmWindow>:
+    name : "confirm"
+    BoxLayout: 
+        orientation : "vertical"
+        Label: 
+            text : "Thankyou for shopping with us!!\n Adicoder thanks you!"
+            font_size : "50dp"
+        Label:     
+            text : "You are Lucky Winner!!\nYour purchases are free!\nEnjoy!" 
+            font_size : "50dp"
+        
+
